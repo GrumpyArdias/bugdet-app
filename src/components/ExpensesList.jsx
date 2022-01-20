@@ -1,12 +1,9 @@
 import { ExpenseItem } from "./ExpenseItem";
+import { AppContext } from "../context/AppContext";
+import { useContext } from "react";
+
 export function ExpensesList() {
-  const expenses = [
-    { id: 12344, name: "Compras", cost: 50 },
-    { id: 12344, name: "A", cost: 100 },
-    { id: 123456, name: "B", cost: 300 },
-    { id: 123556, name: "C", cost: 80 },
-    { id: 12344, name: "D", cost: 250 },
-  ];
+  const { expenses } = useContext(AppContext);
 
   return (
     <ul className="list-group">

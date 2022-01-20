@@ -3,12 +3,17 @@ import { createContext, useReducer } from "react";
 //Reducer se encarga crear el nuevo estado en base a las acciones que recibe
 const AppReducer = (state, action) => {
   switch (action.type) {
+    case "ADD_EXPENSE":
+      return {
+        ...state,
+        expenses: [...state.expenses, action.payload],
+      };
     default:
       return state;
   }
 };
 const initialState = {
-  budget: 2000,
+  budget: 5000,
   expenses: [
     {
       id: 12,
